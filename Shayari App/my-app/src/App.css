@@ -1,29 +1,46 @@
 .App {
-  text-align: center;
-  margin-top: 50px;
+  height: 100vh;
+  background-image: url('https://images.pexels.com/photos/16572560/pexels-photo-16572560/free-photo-of-orchid-flower-in-vase-on-dark-background.jpeg?auto=compress&cs=tinysrgb&w=600');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.input-container {
+  margin-bottom: 20px;
+}
+
 input[type="text"] {
   padding: 10px;
-  width: 300px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
   border: none;
   border-radius: 4px;
+  font-size: 16px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #45a049;
 }
-p {
+
+.shayari {
   margin-top: 20px;
   font-size: 18px;
   font-style: italic;
+  color: white;
 }
