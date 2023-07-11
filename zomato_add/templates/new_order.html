@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zesty Zomato - New Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"],
+        select[multiple] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .navbar {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    .navbar a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <!-- <a  href="/">Home</a> -->
+        <a class="active" href="/">Dishes</a>
+        <a href="/orders">Orders</a>
+        <a href="/orders/new">New Order</a>
+    </div>
+    <h1>New Order</h1>
+    <form method="POST" action="/orders/new">
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" id="customer_name" name="customer_name" required>
+        <br>
+        <br>
+        <label for="dish_ids">Dish IDs:</label>
+        <select id="dish_ids" name="dish_ids" multiple required>
+            {% for dish in dishes %}
+            <option value="{{ dish['dish_id'] }}">{{ dish['dish_id'] }} - {{ dish['dish_name'] }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>
